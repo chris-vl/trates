@@ -1,0 +1,11 @@
+language:
+  - objective-c
+
+script:
+  - which g++
+  - g++ -v main.cpp -c &> gcc.log
+  - cat gcc.log
+  - which clang++
+  - clang++ -v main.cpp -c &> clang.log
+  - cat clang.log
+  - diff gcc.log clang.log
